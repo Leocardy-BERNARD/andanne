@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ANDANNE Groupe</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="menu-toggle">☰</div>
+                <div class="side-menu">
+                    <a href="produits.html">Produits disponibles</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="ANDANNE GROUPE">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reconditionne.html">Reconditionné</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+
+            <h1 class="contact-title">Contactez-<span>nous</span></h1>
+
+            <form
+                class="contact-form"
+                id="contactForm"
+                action="https://formspree.io/f/xbdvjkwq"
+                method="POST"
+            >
+                <!-- Redirection après envoi vers une page de confirmation -->
+                <input type="hidden" name="_next" value="./merci.html">
+                <!-- Sujet de l'email reçu -->
+                <input type="hidden" name="_subject" value="Nouvelle demande de contact - ANDANNE Groupe">
+                <!-- Anti-spam honeypot -->
+                <input type="text" name="_gotcha" style="display:none">
+
+                <div class="form-group">
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00">
+                </div>
+
+                <div class="form-group">
+                    <label for="besoin">Votre besoin</label>
+                    <select id="besoin" name="besoin">
+                        <option value="">-- Sélectionnez un service --</option>
+                        <option value="Informatique reconditionnée">Informatique reconditionnée</option>
+                        <option value="Maintenance & dépannage">Maintenance &amp; dépannage</option>
+                        <option value="Infrastructure systèmes et réseaux">Infrastructure systèmes et réseaux</option>
+                        <option value="Hébergement">Hébergement</option>
+                        <option value="Formation">Formation</option>
+                        <option value="Reprise & recyclage">Reprise &amp; recyclage</option>
+                        <option value="Autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+
+            </form>
+
+            <!-- Message de succès affiché via JS si pas de redirection _next -->
+            <div id="successMessage" style="display:none;">
+                <h2>Merci !</h2>
+                <p>Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+                <a href="index.html">Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+
+                <p>© 2025 ANDANNE Groupe - Support informatique local</p>
+
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@andanne.technolog?_r=1&_t=ZN-96sF4apBfde/" target="_blank">
+                        <img src="assets/images/socials/Tiktok.png" alt="Tiktok">
+                    </a>
+                    <a href="https://www.instagram.com/andannetechnologies//" target="_blank">
+                        <img src="assets/images/socials/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/share/1HLiiDAdCB/" target="_blank">
+                        <img src="assets/images/socials/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029Vb87AEpCRs1lMpsWnE0X/" target="_blank">
+                        <img src="assets/images/socials/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.leboncoin.fr/profile/110a5388-56bc-479f-8f06-f5178b259e6f/offers/" target="_blank">
+                        <img src="assets/images/socials/leboncoin.png" alt="Leboncoin">
+                    </a>
+                    <a href="https://www.vinted.fr/member/3141500615-andannet/" target="_blank">
+                        <img src="assets/images/socials/vinted.png" alt="Vinted">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Gestion AJAX optionnelle : affiche le message de succès sans quitter la page
+        // (si tu ne veux pas de redirection via _next, utilise ce script)
+        const form = document.getElementById('contactForm');
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const data = new FormData(form);
+
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                form.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            } else {
+                alert('Une erreur est survenue. Veuillez réessayer ou nous contacter directement.');
+            }
+        });
+    </script>
+</body>
+</html>

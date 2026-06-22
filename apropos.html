@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos – ANDANNE Groupe</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-hero {
+            padding: 80px 0 60px;
+        }
+        .about-hero h1 {
+            font-size: 56px;
+            color: var(--blue-dark);
+            margin-bottom: 20px;
+        }
+        .about-hero h1 span { color: #2563eb; }
+        .about-hero p {
+            font-size: 22px;
+            color: #555;
+            max-width: 750px;
+            line-height: 1.6;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 60px 0;
+        }
+        .about-grid img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+        .about-text h2 {
+            font-size: 40px;
+            color: var(--blue-dark);
+            margin-bottom: 20px;
+        }
+        .about-text p {
+            font-size: 19px;
+            color: #444;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .values-section { padding: 60px 0; background: #f8fafc; }
+        .values-section h2 {
+            font-size: 42px;
+            color: var(--blue-dark);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .value-card {
+            background: white;
+            border-radius: 16px;
+            padding: 32px 28px;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: .3s;
+        }
+        .value-card:hover {
+            border-color: var(--blue-main);
+            box-shadow: 0 8px 30px rgba(47,130,201,.15);
+            transform: translateY(-4px);
+        }
+        .value-card .icon { font-size: 48px; margin-bottom: 16px; }
+        .value-card h3 { font-size: 24px; color: var(--blue-dark); margin-bottom: 12px; }
+        .value-card p { font-size: 17px; color: #555; line-height: 1.6; }
+
+        .team-section { padding: 60px 0; }
+        .team-section h2 {
+            font-size: 42px;
+            color: var(--blue-dark);
+            margin-bottom: 40px;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+        .team-card {
+            background: #1f2937;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: center;
+            transition: .3s;
+        }
+        .team-card:hover { transform: translateY(-5px); }
+        .team-card .avatar {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--blue-main), var(--blue-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+        }
+        .team-card h3 { color: var(--blue-light); font-size: 22px; padding: 18px 16px 4px; }
+        .team-card p { color: #9ca3af; font-size: 16px; padding: 0 16px 20px; }
+
+        .stats-section {
+            padding: 70px 0;
+            background: var(--blue-main);
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .stat-item h3 { font-size: 54px; color: white; font-weight: 700; margin: 0; }
+        .stat-item p { font-size: 19px; color: #dceeff; margin-top: 6px; }
+
+        @media(max-width: 900px) {
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+        }
+        @media(max-width: 768px) {
+            .about-hero h1 { font-size: 38px; }
+            .about-grid { grid-template-columns: 1fr; gap: 30px; }
+            .about-grid img { height: 280px; }
+            .values-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <nav>
+            <div class="menu-toggle">☰</div>
+            <div class="side-menu">
+                <a href="reconditionne.html">Produits disponibles</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo.png" alt="ANDANNE GROUPE"></a>
+            </div>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="reconditionne.html">Reconditionné</a></li>
+                <li><a href="temoignages.html">Témoignages</a></li>
+                <li><a href="actualites.html">Actualités</a></li>
+                <li><a href="apropos.html">À propos</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="about-hero">
+    <div class="container">
+        <h1>À propos d'<span>ANDANNE Groupe</span></h1>
+        <p>Votre partenaire informatique de confiance en Île-de-France, spécialisé dans le matériel reconditionné et les solutions IT pour particuliers et PME.</p>
+    </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>500+</h3>
+                <p>Clients satisfaits</p>
+            </div>
+            <div class="stat-item">
+                <h3>1000+</h3>
+                <p>Appareils reconditionnés</p>
+            </div>
+            <div class="stat-item">
+                <h3>5+</h3>
+                <p>Années d'expérience</p>
+            </div>
+            <div class="stat-item">
+                <h3>98%</h3>
+                <p>Taux de satisfaction</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTRE HISTOIRE -->
+<section>
+    <div class="container">
+        <div class="about-grid">
+            <img src="assets/images/hero.jpg" alt="ANDANNE Groupe équipe">
+            <div class="about-text">
+                <h2>Notre histoire</h2>
+                <p>ANDANNE Groupe est né d'une conviction simple : l'informatique de qualité doit être accessible à tous. Fondée en Île-de-France, notre entreprise s'est rapidement imposée comme un acteur de référence dans le reconditionnement de matériel informatique.</p>
+                <p>Nous accompagnons aussi bien les particuliers que les TPE et PME dans leurs projets numériques, avec une approche humaine et des solutions adaptées à chaque budget.</p>
+                <p>Notre engagement pour l'économie circulaire nous pousse à donner une seconde vie aux équipements, réduisant ainsi l'impact environnemental du numérique.</p>
+                <a href="contact.html" class="btn btn-primary" style="margin-top:10px;">Nous contacter</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NOS VALEURS -->
+<div class="values-section">
+    <div class="container">
+        <h2>Nos valeurs</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="icon">🤝</div>
+                <h3>Confiance</h3>
+                <p>Transparence totale sur nos prix, nos délais et l'état de vos équipements. Aucune mauvaise surprise.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">♻️</div>
+                <h3>Responsabilité</h3>
+                <p>Nous valorisons chaque appareil pour réduire les déchets électroniques et prolonger la durée de vie du matériel.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">⚡</div>
+                <h3>Réactivité</h3>
+                <p>Interventions rapides, réponses sous 24h et dépannages à domicile ou en entreprise selon vos besoins.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">🎯</div>
+                <h3>Expertise</h3>
+                <p>Des techniciens qualifiés qui maîtrisent les dernières technologies pour vous offrir des solutions durables.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">💡</div>
+                <h3>Accessibilité</h3>
+                <p>Du matériel certifié à prix juste pour que chacun puisse bénéficier d'outils informatiques fiables.</p>
+            </div>
+            <div class="value-card">
+                <div class="icon">🛡️</div>
+                <h3>Qualité</h3>
+                <p>Chaque produit est testé, certifié et garanti avant d'être proposé à la vente ou installé chez nos clients.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NOTRE ÉQUIPE -->
+<section class="team-section">
+    <div class="container">
+        <h2>Notre équipe</h2>
+        <div class="team-grid">
+            <div class="team-card">
+                <div class="avatar">👨‍💻</div>
+                <h3>Fondateur & Dirigeant</h3>
+                <p>Expert en systèmes et réseaux, passionné par l'économie circulaire</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">🔧</div>
+                <h3>Technicien Hardware</h3>
+                <p>Spécialiste reconditionnement et diagnostic matériel</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">🌐</div>
+                <h3>Ingénieur Réseau</h3>
+                <p>Infrastructure, sécurité et solutions cloud</p>
+            </div>
+            <div class="team-card">
+                <div class="avatar">🎓</div>
+                <h3>Formateur</h3>
+                <p>Accompagnement et montée en compétences des utilisateurs</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <p>© 2025 ANDANNE Groupe – Support informatique local</p>
+            <div class="social-links">
+                <a href="https://www.tiktok.com/@andanne.technolog?_r=1&_t=ZN-96sF4apBfde/" target="_blank" rel="noopener"><img src="assets/images/socials/Tiktok.png" alt="TikTok"></a>
+                <a href="https://www.instagram.com/andannetechnologies//" target="_blank" rel="noopener"><img src="assets/images/socials/Instagram.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/share/1HLiiDAdCB/" target="_blank" rel="noopener"><img src="assets/images/socials/Facebook.png" alt="Facebook"></a>
+                <a href="https://whatsapp.com/channel/0029Vb87AEpCRs1lMpsWnE0X/" target="_blank" rel="noopener"><img src="assets/images/socials/Whatsapp.png" alt="WhatsApp"></a>
+                <a href="https://www.leboncoin.fr/profile/110a5388-56bc-479f-8f06-f5178b259e6f/offers/" target="_blank" rel="noopener"><img src="assets/images/socials/Leboncoin.png" alt="Leboncoin"></a>
+                <a href="https://www.vinted.fr/member/3141500615-andannet/" target="_blank" rel="noopener"><img src="assets/images/socials/Vinted.png" alt="Vinted"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+</body>
+</html>

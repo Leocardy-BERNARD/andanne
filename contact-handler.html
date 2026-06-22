@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - ANDANNE Groupe</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="menu-toggle">☰</div>
+                <div class="side-menu">
+                    <a href="produits.html">Produits disponibles</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logo.png" alt="ANDANNE GROUPE">
+                    </a>
+                </div>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="reconditionne.html">Reconditionné</a></li>
+                    <li><a href="temoignages.html">Témoignages</a></li>
+                    <li><a href="actualites.html">Actualités</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact-section">
+        <div class="container">
+
+            <h1 class="contact-title">Contactez-<span>nous</span></h1>
+
+            <!--
+                NOTE : Le formulaire PHP (contact-handler.php) utilisait une base de données MySQL.
+                En HTML statique, deux options :
+                  1. Utiliser un service tiers (Formspree, Netlify Forms, etc.)
+                  2. Ouvrir le client mail avec mailto: (solution ci-dessous)
+                Pour utiliser Formspree : remplacez l'action par "https://formspree.io/f/VOTRE_ID"
+                et retirez onsubmit.
+            -->
+            <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+
+                <div class="form-group">
+                    <label for="nom">Nom complet *</label>
+                    <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" placeholder="+33 6 00 00 00 00">
+                </div>
+
+                <div class="form-group">
+                    <label for="besoin">Votre besoin</label>
+                    <select id="besoin" name="besoin">
+                        <option value="">-- Sélectionnez un service --</option>
+                        <option value="reconditionne">Informatique reconditionnée</option>
+                        <option value="maintenance">Maintenance &amp; dépannage</option>
+                        <option value="reseau">Infrastructure systèmes et réseaux</option>
+                        <option value="hebergement">Hébergement</option>
+                        <option value="formation">Formation</option>
+                        <option value="recyclage">Reprise &amp; recyclage</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+
+            </form>
+
+            <div id="successMessage" style="display:none;">
+                <h2>Merci !</h2>
+                <p>Votre demande a bien été envoyée. Nous vous répondrons dans les plus brefs délais.</p>
+                <a href="index.html">Retour à l'accueil</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+
+                <p>© 2025 ANDANNE Groupe - Support informatique local</p>
+
+                <div class="social-links">
+                    <a href="https://www.tiktok.com/@andanne.technolog?_r=1&_t=ZN-96sF4apBfde/" target="_blank">
+                        <img src="assets/images/socials/Tiktok.png" alt="Tiktok">
+                    </a>
+                    <a href="https://www.instagram.com/andannetechnologies//" target="_blank">
+                        <img src="assets/images/socials/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://www.facebook.com/share/1HLiiDAdCB/" target="_blank">
+                        <img src="assets/images/socials/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://whatsapp.com/channel/0029Vb87AEpCRs1lMpsWnE0X/" target="_blank">
+                        <img src="assets/images/socials/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.leboncoin.fr/profile/110a5388-56bc-479f-8f06-f5178b259e6f/offers/" target="_blank">
+                        <img src="assets/images/socials/leboncoin.png" alt="Leboncoin">
+                    </a>
+                    <a href="https://www.vinted.fr/member/3141500615-andannet/" target="_blank">
+                        <img src="assets/images/socials/vinted.png" alt="Vinted">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+
+            const nom      = document.getElementById('nom').value;
+            const email    = document.getElementById('email').value;
+            const tel      = document.getElementById('telephone').value;
+            const besoin   = document.getElementById('besoin').value;
+            const message  = document.getElementById('message').value;
+
+            // Option mailto : ouvre le client mail avec les infos pré-remplies
+            const subject  = encodeURIComponent('Demande de contact - ' + besoin);
+            const body     = encodeURIComponent(
+                'Nom : ' + nom + '\n' +
+                'Email : ' + email + '\n' +
+                'Téléphone : ' + tel + '\n' +
+                'Besoin : ' + besoin + '\n\n' +
+                'Message :\n' + message
+            );
+
+            window.location.href = 'mailto:contact@andanne.fr?subject=' + subject + '&body=' + body;
+
+            // Affiche le message de confirmation
+            document.getElementById('contactForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
