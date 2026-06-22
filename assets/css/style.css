@@ -254,8 +254,9 @@ section{ padding:60px 0; }
     color:var(--blue-dark);
 }
 
-.services-title span{ color:#2563eb; }
-
+.services-title span{
+    color:inherit;
+}
 .services-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
