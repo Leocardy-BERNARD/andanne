@@ -10,12 +10,7 @@
       padding: 80px 0 60px;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
+   
 
     .hero-content h1 {
       font-size: 48px;
@@ -143,6 +138,20 @@
       .hero-content h1 { font-size: 32px; }
       .services-grid { grid-template-columns: 1fr; }
     }
+
+    .hero-image-top {
+  width: 100%;
+  max-height: 420px;
+  overflow: hidden;
+}
+
+.hero-image-top img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+    
   </style>
 </head>
 <body>
@@ -172,12 +181,16 @@
   </div>
 </header>
 
+<!-- IMAGE PLEINE LARGEUR -->
+<div class="hero-image-top">
+  <img src="assets/images/hero.jpg" alt="Image entreprise">
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-
-    <!-- COLONNE GAUCHE -->
+  <div class="container">
     <div class="hero-content">
+      
       <h1>Votre expert local en informatique reconditionnée</h1>
       <p>Matériel certifié, dépannage rapide et accompagnement pour particuliers et TPE/PME.</p>
 
@@ -204,12 +217,7 @@
       </div>
     </div>
 
-    <!-- COLONNE DROITE -->
-    <div class="hero-image">
-      <img src="assets/images/hero.jpg" alt="Image entreprise">
-    </div>
-
-  </div>
+    
 </section>
 
 <!-- NOS SERVICES -->
