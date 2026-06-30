@@ -6,11 +6,30 @@
   <title>ANDANNE Groupe – Support informatique local</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
-    .hero {
-      padding: 80px 0 60px;
+    /* IMAGE PLEINE LARGEUR */
+    .hero-image-top {
+      width: 100%;
+      max-height: 420px;
+      overflow: hidden;
     }
 
-   
+    .hero-image-top img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 60px 0 50px;
+    }
+
+    .hero-content {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
     .hero-content h1 {
       font-size: 48px;
@@ -31,13 +50,7 @@
       gap: 16px;
       margin-bottom: 36px;
       flex-wrap: wrap;
-    }
-
-    .hero-image img {
-      width: 100%;
-      border-radius: 20px;
-      object-fit: cover;
-      max-height: 460px;
+      justify-content: center;
     }
 
     /* Barre de recherche */
@@ -49,7 +62,7 @@
       padding: 12px 20px;
       gap: 10px;
       max-width: 480px;
-      margin-bottom: 20px;
+      margin: 0 auto 20px;
     }
 
     .hero-search input {
@@ -75,6 +88,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      justify-content: center;
     }
 
     .search-tags span {
@@ -115,7 +129,6 @@
       background: #1f2937;
       border-radius: 16px;
       padding: 28px 24px;
-      color: white;
       font-size: 18px;
       font-weight: 600;
       color: var(--blue-light);
@@ -129,29 +142,14 @@
     }
 
     @media(max-width: 900px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-image { order: -1; }
       .services-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media(max-width: 600px) {
       .hero-content h1 { font-size: 32px; }
+      .hero-image-top img { height: 250px; }
       .services-grid { grid-template-columns: 1fr; }
     }
-
-    .hero-image-top {
-  width: 100%;
-  max-height: 420px;
-  overflow: hidden;
-}
-
-.hero-image-top img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-    
   </style>
 </head>
 <body>
@@ -181,7 +179,7 @@
   </div>
 </header>
 
-<!-- IMAGE PLEINE LARGEUR -->
+<!-- IMAGE PLEINE LARGEUR SOUS LE HEADER -->
 <div class="hero-image-top">
   <img src="assets/images/hero.jpg" alt="Image entreprise">
 </div>
@@ -190,7 +188,6 @@
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      
       <h1>Votre expert local en informatique reconditionnée</h1>
       <p>Matériel certifié, dépannage rapide et accompagnement pour particuliers et TPE/PME.</p>
 
@@ -216,8 +213,7 @@
         </div>
       </div>
     </div>
-
-    
+  </div>
 </section>
 
 <!-- NOS SERVICES -->
