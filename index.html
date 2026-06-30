@@ -1,102 +1,246 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services – ANDANNE Groupe</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ANDANNE Groupe – Support informatique local</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 20px;
+      color: #444;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      max-height: 460px;
+    }
+
+    /* Barre de recherche */
+    .hero-search {
+      display: flex;
+      align-items: center;
+      background: #f1f5f9;
+      border-radius: 50px;
+      padding: 12px 20px;
+      gap: 10px;
+      max-width: 480px;
+      margin-bottom: 20px;
+    }
+
+    .hero-search input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 16px;
+      width: 100%;
+      color: #333;
+    }
+
+    .search-icon { font-size: 18px; }
+
+    /* Recherches populaires */
+    .popular-searches h3 {
+      font-size: 14px;
+      color: #888;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .search-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .search-tags span {
+      background: #e8f0fe;
+      color: var(--blue-dark);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .search-tags span:hover {
+      background: var(--blue-main);
+      color: white;
+    }
+
+    /* Section services */
+    .services-section {
+      padding: 60px 0;
+      background: #f8fafc;
+    }
+
+    .services-section h2 {
+      font-size: 40px;
+      color: var(--blue-dark);
+      margin-bottom: 36px;
+      text-align: center;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: #1f2937;
+      border-radius: 16px;
+      padding: 28px 24px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--blue-light);
+      transition: .3s;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(47,130,201,.2);
+    }
+
+    @media(max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-image { order: -1; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media(max-width: 600px) {
+      .hero-content h1 { font-size: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <div class="container">
-        <nav>
-            <div class="menu-toggle">☰</div>
-            <div class="side-menu">
-                <a href="services.html">Services</a>
-                 <a href="reconditionne.html">Reconditionne</a>
-                 <a href="témoignages.html">Témoigtnages</a>
-                 <a href="actualites.html">Actualites</a>
-                 <a href="apropos.html">A poropos</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <div class="logo">
-                <a href="index.html"><img src="assets/images/logo.png" alt="ANDANNE GROUPE"></a>
-            </div>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="reconditionne.html">Reconditionné</a></li>
-                <li><a href="temoignages.html">Témoignages</a></li>
-                <li><a href="actualites.html">Actualités</a></li>
-                <li><a href="apropos.html">À propos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <nav>
+      <div class="menu-toggle">☰</div>
+      <div class="side-menu">
+        <a href="reconditionne.html">Produits disponibles</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt="ANDANNE GROUPE"></a>
+      </div>
+      <ul>
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="reconditionne.html">Reconditionné</a></li>
+        <li><a href="temoignages.html">Témoignages</a></li>
+        <li><a href="actualites.html">Actualités</a></li>
+        <li><a href="apropos.html">À propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<section class="services-section">
-    <div class="container">
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
 
-        <h1 class="services-title">Nos <span>services</span> à votre disposition</h1>
+    <!-- COLONNE GAUCHE -->
+    <div class="hero-content">
+      <h1>Votre expert local en informatique reconditionnée</h1>
+      <p>Matériel certifié, dépannage rapide et accompagnement pour particuliers et TPE/PME.</p>
 
-        <div class="services-grid">
+      <div class="hero-buttons">
+        <a class="btn btn-primary" href="services.html">Voir nos services</a>
+        <a class="btn btn-secondary" href="contact.html">Demander un devis</a>
+      </div>
 
-            <div class="service-card">
-                <img src="assets/images/Reconditionne.jpg" alt="Informatique reconditionnée">
-                <h3>Informatique reconditionnée</h3>
-                <p>Ordinateurs et équipements testés, certifiés et garantis.</p>
-            </div>
+      <!-- BARRE DE RECHERCHE -->
+      <div class="hero-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" placeholder="Que recherchez-vous ?">
+      </div>
 
-            <div class="service-card">
-                <img src="assets/images/maintenance.jpg" alt="Maintenance">
-                <h3>Maintenance &amp; dépannage</h3>
-                <p>Interventions rapides à domicile ou en entreprise.</p>
-            </div>
-
-            <div class="service-card">
-                <img src="assets/images/reseau.jpg" alt="Infrastructure réseau">
-                <h3>Infrastructure systèmes et réseaux</h3>
-                <p>Installation, sécurisation et optimisation réseau.</p>
-            </div>
-
-            <div class="service-card">
-                <img src="assets/images/cloud.jpg" alt="Cloud">
-                <h3>Hébergement On Premise et distant</h3>
-                <p>Solutions de sauvegarde et accès à distance.</p>
-            </div>
-
-            <div class="service-card">
-                <img src="assets/images/formation.jpg" alt="Formation">
-                <h3>Formation</h3>
-                <p>Accompagnement et formation personnalisée.</p>
-            </div>
-
-            <div class="service-card">
-                <img src="https://as-a-service.reelit.fr/wp-content/uploads/2024/10/recyclage-ordinateur-768x512.jpg" alt="Recyclage">
-                <h3>Reprise &amp; recyclage</h3>
-                <p>Valorisation responsable du matériel informatique.</p>
-            </div>
-
+      <div class="popular-searches">
+        <h3>Recherches populaires</h3>
+        <div class="search-tags">
+          <span>Maintenance informatique</span>
+          <span>PC reconditionné</span>
+          <span>Support PME</span>
+          <span>Cybersécurité</span>
+          <span>Cloud</span>
         </div>
+      </div>
     </div>
+
+    <!-- COLONNE DROITE -->
+    <div class="hero-image">
+      <img src="assets/images/hero.jpg" alt="Image entreprise">
+    </div>
+
+  </div>
+</section>
+
+<!-- NOS SERVICES -->
+<section class="services-section">
+  <div class="container">
+    <h2>Nos services</h2>
+    <div class="services-grid">
+      <div class="service-card">💻 Informatique reconditionnée</div>
+      <div class="service-card">🔧 Maintenance & dépannage</div>
+      <div class="service-card">🌐 Infrastructure réseau</div>
+      <div class="service-card">☁️ Cloud & hébergement</div>
+      <div class="service-card">🎓 Formation</div>
+      <div class="service-card">♻️ Reprise & recyclage</div>
+    </div>
+  </div>
 </section>
 
 <footer>
-    <div class="container">
-        <div class="footer-content">
-            <p>© 2025 ANDANNE Groupe – Support informatique local</p>
-            <div class="social-links">
-                <a href="https://www.tiktok.com/@andanne.technolog?_r=1&_t=ZN-96sF4apBfde/" target="_blank" rel="noopener"><img src="assets/images/socials/Tiktok.png" alt="TikTok"></a>
-                <a href="https://www.instagram.com/andannetechnologies//" target="_blank" rel="noopener"><img src="assets/images/socials/Instagram.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/share/1HLiiDAdCB/" target="_blank" rel="noopener"><img src="assets/images/socials/Facebook.png" alt="Facebook"></a>
-                <a href="https://whatsapp.com/channel/0029Vb87AEpCRs1lMpsWnE0X/" target="_blank" rel="noopener"><img src="assets/images/socials/Whatsapp.png" alt="WhatsApp"></a>
-                <a href="https://www.leboncoin.fr/profile/110a5388-56bc-479f-8f06-f5178b259e6f/offers/" target="_blank" rel="noopener"><img src="assets/images/socials/Leboncoin.png" alt="Leboncoin"></a>
-                <a href="https://www.vinted.fr/member/3141500615-andannet/" target="_blank" rel="noopener"><img src="assets/images/socials/Vinted.png" alt="Vinted"></a>
-            </div>
-        </div>
+  <div class="container">
+    <div class="footer-content">
+      <p>© 2025 ANDANNE Groupe – Support informatique local</p>
+      <div class="social-links">
+        <a href="https://www.tiktok.com/@andanne.technolog?_r=1&_t=ZN-96sF4apBfde/" target="_blank" rel="noopener"><img src="assets/images/socials/Tiktok.png" alt="TikTok"></a>
+        <a href="https://www.instagram.com/andannetechnologies//" target="_blank" rel="noopener"><img src="assets/images/socials/Instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/share/1HLiiDAdCB/" target="_blank" rel="noopener"><img src="assets/images/socials/Facebook.png" alt="Facebook"></a>
+        <a href="https://whatsapp.com/channel/0029Vb87AEpCRs1lMpsWnE0X/" target="_blank" rel="noopener"><img src="assets/images/socials/Whatsapp.png" alt="WhatsApp"></a>
+        <a href="https://www.leboncoin.fr/profile/110a5388-56bc-479f-8f06-f5178b259e6f/offers/" target="_blank" rel="noopener"><img src="assets/images/socials/Leboncoin.png" alt="Leboncoin"></a>
+        <a href="https://www.vinted.fr/member/3141500615-andannet/" target="_blank" rel="noopener"><img src="assets/images/socials/Vinted.png" alt="Vinted"></a>
+      </div>
     </div>
+  </div>
 </footer>
 
 <script src="assets/js/script.js"></script>
